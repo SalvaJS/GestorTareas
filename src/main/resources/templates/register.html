@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Registro</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+   	<link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body class="formularioSesion">
+    <p th:text="'Rellena los siguientes campos para el registro.'" />
+    <form th:action="@{/register}" th:object="${usuario}" method="post">
+    	<div>
+    		<label for="user">Nombre de usuario:</label>
+    		<input class="campoTexto" type="text" id="nombreUsuario" th:field="*{nombreUsuario}">
+    	</div>
+    	<div>
+    		<label for="email">Email:</label>
+    		<input class="campoTexto" type="email" id="email" th:field="*{email}">
+    	</div>
+    	<div>
+    		<label for="pass">Contraseña:</label>
+    		<input class="campoTexto" type="password" id="pass" th:field="*{password}">
+    	</div>
+    	<div>
+    		<label for="email">Edad:</label>
+    		<input class="campoTexto" type="number" id="edad" th:field="*{edad}">
+    	</div>
+    	<div>
+    		<label>Roles:</label>
+    		<input type="checkbox" id = "rolesCheckBox"
+    			th:each="rol : ${rolesCheckBox}"
+    			th:id="'rol' + ${rol.id}"
+    			th:text="${rol.nombre}"
+    			th:value="${rol.id}"
+    			th:field="*{roles}">
+    	</div>
+    	<div th:if="${error}" th:text="${error}" style="color: red;"></div>
+    	<button type="submit" class="btn" id="botonRegistro">Registrarse</button>
+    </form>
+</body>
+</html>

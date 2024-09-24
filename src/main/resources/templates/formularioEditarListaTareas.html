@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Editar lista de tareas</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+    <form class="formulario" th:action="@{/editarListaTareas}" th:object="${listaTareasDTO}" method="post">
+    <h1>Puedes modificar los siguientes campos para editar la lista de tareas</h1>
+    	<div>
+    		<label for="nombre">Nombre*:</label>
+    		<input class="campoTexto" type="text" id="nombre" th:field="*{nombre}">
+    	</div>
+		<div>
+    		<label for="descripcion">Descripción:</label>
+    		<input class="campoTexto" type="text" id="descripcion" th:field="*{descripcion}">
+    	</div>
+    	<input type="hidden" th:field="*{id}">
+    	<div th:if="${error}" th:text="${error}" style="color: red;"></div>
+    	<div class="filaBotones">
+    		<a th:href="@{/menuUsuario}" class="btn">Atrás</a>
+    		<input class="btn derecha" type="submit" value="Guardar cambios">
+    	</div>
+    </form>
+</body>
+</html>

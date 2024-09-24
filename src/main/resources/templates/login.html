@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Inicio de sesión</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+	<link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body class="formularioSesion">
+    <p th:text="'Rellena los siguientes campos para iniciar sesión.'" />
+    <form th:action="@{/login}" method="post">
+   		<div>
+    		<label for="email">Email:</label>
+    		<input class="campoTexto" type="text" id="email" name="username" required>
+    	</div>
+    	<div>
+    		<label for="pass">Contraseña:</label>
+    		<input class="campoTexto" type="password" id="pass" name="password" required>
+    	</div>
+    	<div th:if="${param.error}">
+            Email o contraseña incorrecta.
+        </div>
+    	<button type="submit" class="btn" id="botonInicioSesion">Iniciar sesión</button>
+    </form>
+</body>
+</html>

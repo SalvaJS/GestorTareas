@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Menú</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="/css/estilosTabla.css">
+    
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/funciones.js"></script>
+</head>
+<body>
+	<div id="pestanas">
+		<button class="pestana activo" id="pestana1" onclick="cambiarPestana('pestana1')">Inicio</button>
+		<button class="pestana" id="pestana2" onclick="cambiarPestana('pestana2')">Listas de tareas</button>
+		<form id="logOut" class="derecha" th:action="@{/logout}" method="post" style="display: inline;">
+			<button type="submit" class="btn" id="botonlogOut">Cerrar Sesión</button>
+		</form>
+	</div>
+	
+	<div th:if="${error}" th:text="${error}" style="color: red;"></div>
+	
+	<!-- CONTENIDO INICIO -->
+	<div class="pestanaContenido activo" id="pestana1Contenido">
+    	<h2 th:text="|Hola ${#authentication.principal.nombreUsuario}!|"></h2>
+    	<p>Bienvenido a el gestor de tareas. Aquí podrás crear tareas para organizar tu día a día.</p>
+    </div>
+    
+    
+    <!-- CONTENIDO LISTAS DE TAREAS -->
+    <div class="pestanaContenido" id="pestana2Contenido">
+    	<div id="listasTareas">
+    		<h2>Listas de tareas</h2>
+    		<table class="tablas" id="listasTareasTabla">
+    			<thead>
+    				<tr>
+    					<th>Nombre</th>
+    					<th>Descripcion</th>
+    					<th class="centrado">Acciones</th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    			</tbody>
+    		</table>
+    		<form th:action="@{/formularioCrearListaTareas}" method="post">
+    			<button class="btn" id="botonCrearListaTareas">Crear</button>
+			</form>
+    	</div>
+    </div>
+</body>
+</html>

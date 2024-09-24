@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Crear lista de tareas</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+    <form class="formulario" th:action="@{/crearListaTareas}" th:object="${listaTareas}" method="post">
+    <h1>Rellena los siguientes campos para crear una lista de tareas</h1>
+    	<div>
+    		<label for="nombre">Nombre*:</label>
+    		<input class="campoTexto" type="text" id="nombre" th:field="*{nombre}">
+    	</div>
+		<div>
+    		<label for="descripcion">Descripción:</label>
+    		<input class="campoTexto" type="text" id="descripcion" th:field="*{descripcion}">
+    	</div>
+    	<div th:if="${error}" th:text="${error}" style="color: red;"></div>
+    	<div class="filaBotones">
+    		<a th:href="@{/menuUsuario}" class="btn">Atrás</a>
+    		<input class="btn derecha" type="submit" value="Crear lista">
+    	</div>
+    </form>
+    	
+</body>
+</html>

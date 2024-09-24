@@ -1,0 +1,119 @@
+#pestanas {
+    display: flex;
+    align-items: center;
+}
+
+.derecha {
+    margin-left: auto !important; /* Empuja el botón hacia la derecha */
+}
+
+.pestana {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px; /* Espacio entre las pestañas */
+}
+
+.pestana:hover{
+	background-color: #e0e0e0;
+}
+
+.pestana.activo {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pestanaContenido {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.pestanaContenido.activo {
+    display: block;
+}
+
+.btn{
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 8px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn:hover{
+	background-color: #45a049
+}
+
+.centrado{
+	text-align: center !important;
+}
+
+
+
+/* Estilos básicos para el formulario */
+.formulario {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.campoTexto {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.campoTexto:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Body para los formularios de sesion */
+
+body.formularioSesion {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: normal; /* Quita la negrita */
+}
+
+.filaBotones{
+	display: flex;
+    gap: 10px;
+}

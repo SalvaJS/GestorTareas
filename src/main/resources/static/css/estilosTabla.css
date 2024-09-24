@@ -1,0 +1,76 @@
+/* Estilos generales para la tabla */
+.tablas {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para los encabezados */
+.tablas thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilo para las celdas del encabezado */
+.tablas th {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Estilo para las filas de la tabla */
+.tablas tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+ 
+/* Estilo para las celdas de la tabla */
+.tablas td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Estilo para las filas alternas para mejorar la legibilidad */
+.tablas tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para las filas al pasar el ratón por encima */
+.tablas tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilo para la última fila de la tabla para evitar bordes dobles */
+.tablas tbody tr:last-child {
+    border-bottom: 0;
+}
+
+/* Estilo para los botones dentro de la tabla */
+.tablas .acciones {
+    width: 0;
+}
+
+.tablas .acciones .botonesAcciones {
+    display: flex;
+    gap: 10px;
+}
+
+.tablas .acciones button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.tablas .acciones button:hover {
+    background-color: #45a049;
+}
